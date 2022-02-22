@@ -1,0 +1,367 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@100;300;400;700;900&display=swap');
+
+/*variables*/
+$black: #2a2a2a;
+$blue: #3f5c6d;
+$teal: #2a464b;
+$pale: #d6d6b1;
+$purple: #73666d;
+$Fira: 'Fira Sans', sans-serif;
+$Lato: 'Lato', sans-serif;
+
+/*mix-ins*/
+@mixin flexRow {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+@mixin flexColumn {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+* { box-sizing: border-box; }
+img { max-width: 100%; }
+body {
+  background-color: $black;
+}
+a.blue { color: $blue; }
+a.pale { color: $pale; }
+a.black { color: $black; }
+#wrap {
+  background-color: $black;
+  box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.6);
+  max-width: 1000px;
+  margin: auto;
+  @include flexColumn;
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+header {
+  width: 100%;
+  height: 100vh;
+  @include flexColumn;
+  justify-content: space-between;
+  position: relative;
+  background: linear-gradient(90deg, $black 50%, $pale 50%);
+  #text {
+    width: 100%;
+    h1 {
+      text-transform: uppercase;
+      font-size: 104px;
+      font-family: $Fira;
+      margin: 10px 0;
+      width: 100%;
+    }
+    h1 a {
+      width: 50%;
+      display: inline-block;
+      padding: 0 7px;
+    }
+    h1 a.pale{text-align: right;}
+    h2 {
+      font-size: 36px;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-family: $Lato;
+      color: $blue;
+      letter-spacing: 3px;
+      margin: 0 0 0 50%;
+      width: 50%;
+      text-align: center;
+    }
+  }
+
+  #nav {
+    width: 100%;
+    @include flexRow;
+    margin-top: 200px;
+    padding-bottom: 125px;
+    background-color: $black;
+    .item {
+      width: 100%;
+      display: block;
+      padding: 40px;
+      font-size: 48px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-family: $Lato;
+      font-weight: 900;
+      text-align: center;
+    }
+    .item.pale {
+      background-color: $pale;
+      color: $black;
+    }
+    .item.black {
+      background-color: $black;
+      color: $pale;
+    }
+    #left, #right {
+      width: 50%;
+    }
+  }
+  .scroll {
+    position: absolute;
+    bottom: 0;
+  }
+  .scroll .fa-angle-double-down {
+    color: $teal;
+    font-size: 72px;
+    animation-delay: 2s, 3s;
+    animation-iteration-count: 1, infinite;
+    animation-name: fadeIn, bounce;
+  }
+  .fa-angle-double-down:hover { cursor: pointer; }
+  .logo {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    bottom: 425px;
+  }
+}
+.block {
+  width: 100%;
+  @include flexColumn;
+  padding: 0 50px;
+  margin: 30px 0;
+  h1 {
+    font-size: 48px;
+    text-align: center;
+    letter-spacing: 5px;
+    color: $blue;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-bottom: solid $teal 3px;
+    padding: 0 80px;
+  }
+}
+#works {
+  #portfolio {
+    width: 100%;
+    @include flexRow;
+    justify-content: space-between;
+    .item {
+      background-image: url('../logo.png');
+      background-size: contain;
+      width: 350px;
+      height: 350px;
+      margin: 30px 0;
+      box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      position: relative;
+
+      .overlay {
+        border-radius: 9px;
+        background: rgba(0,0,0,0.9);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+
+        -webkit-transition: all 0.4s ease-in-out 0s;
+        -moz-transition: all 0.4s ease-in-out 0s;
+        transition: all 0.4s ease-in-out 0s;
+      }
+      .content {
+        position: absolute;
+        padding: 10px;
+        box-sizing: border-box;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        color: $pale;
+        font-size: 14px;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+        h3 {
+          border-bottom: solid $blue 2px;
+          margin: 0 20px;
+          text-align: center;
+          font-size: 22px;
+          color: $blue;
+        }
+        p {
+          border-left: solid $purple 3px;
+          padding-left: 10px;
+        }
+      }
+    }
+    .item:hover .content{
+      top: 50%;
+      left: 50%;
+      opacity: 1;
+    }
+    .item:hover .overlay{
+      opacity: 1;
+    }
+    #kerokero { background-image: url('../kerokero.png'); }
+    #memestocks { background-image: url('../memestocks.png'); }
+    #buggy { background-image: url('../buggy.png'); background-color: #EEEEEE; }
+    #colorcult { background-image: url('../colorcult.png');}
+  }
+}
+#about {
+  p {
+    color: $pale;
+    font-size: 22px;
+    font-family: $Lato;
+    letter-spacing: 2px;
+    line-height: 42px;
+  }
+}
+
+#contact form{
+    width: 600px;
+    border-radius: 10px;
+    background-color: $black;
+    box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.6);
+  .title{
+    width: 100%;
+    line-height: 72px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $pale;
+    font-family: $Fira;
+    letter-spacing: 5px;
+    background-color: $blue;
+    border-radius: 10px 10px 0 0;
+  }
+  .body{
+    padding: 10px;
+    .row{
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+      input[type="text"], textarea{
+        margin: 0 15px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background-color: $pale;
+        color: darken($pale, 40);
+        font-size: 16px;
+        line-height: 24px;
+      }
+      input[type="text"] {
+        appearance: none;
+        width: 100%;
+        padding: 5px 15px;
+      }
+    }
+    label[for="textarea"]{
+      text-align: right;
+      padding-right: 20px;
+      font-family: $Fira;
+      color: lighten($purple, 20);
+      font-size: 16px;
+      font-weight: 400;
+    }
+    textarea {
+      resize: none;
+      width: 80%;
+      height: 100px;
+      padding: 10px;
+    }
+  }
+  .footer{
+    margin: 15px 50px;
+    padding: 15px 10px;
+    @include flexRow;
+    border-top: solid lighten($purple, 10) 2px;
+    a{
+      display: inline-block;
+      line-height: 48px;
+      border-radius: 5px;
+      padding: 5px 15px;
+      background: $blue;
+      color: $pale;
+      margin: auto;
+      font-size: 24px;
+    }
+    .fa-paper-plane {
+      margin-left: 8px;
+    }
+  }
+}
+#resume {
+  @include flexRow;
+  justify-content: space-evenly;
+  a {
+    color: $pale;
+    font-size: 24px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+  }
+  .item {
+    width: 45%;
+    border-radius: 12px 12px 10px 10px;
+    height: 400px;
+    @include flexColumn;
+    box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.6);
+    h2 {
+      text-align: center;
+      font-size: 32px;
+      line-height: 64px;
+      border-radius: 10px 10px 0 0;
+      width: 100%;
+      margin: 0 0 30px 0;
+    }
+    .content {
+      width: 100%;
+      padding: 5px 20px;
+    }
+    p {
+      font-size: 20px;
+      line-height: 30px;
+      margin: 0;
+      i { margin-right: 10px;}
+      text-align: center;
+      padding: 0 10px;
+      width: 100%;
+    }
+    .detail{
+      font-size: 18px;
+      font-weight: 200;
+      margin: 10px 0;
+      text-align: left;
+      a {
+        display: inline;
+        font-size: 20px;
+        color: $pale;
+        font-weight: 600;
+      }
+      border-left: solid $purple 3px;
+    }
+  }
+  #work {
+    background-color: $black;
+    h2 {
+      background-color: $pale;
+      color: $black;
+    }
+    p { color: $pale; }
+    .detail { color: white; }
+  }
+  #education {
+    background-color: $pale;
+    h2 {
+      background-color: $black;
+      color: $pale;
+    }
+    p { color: $black; }
+    .detail { color: $teal; }
+  }
+}

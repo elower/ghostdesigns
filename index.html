@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Basic Page Needs
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta charset="utf-8">
+<title>Ghost Designs</title>
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Mobile Specific Metas
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- CSS
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="stylesheet" href="css/style.css">
+
+
+<!-- Favicon
+––––––––––––––––––––––––––––––––––––––––––––––––––
+<link rel="icon" type="image/png" href="images/favicon.ico"> -->
+
+<!-- JQUERY
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<!-- FONT AWESOME ----------------------->
+<script src="https://kit.fontawesome.com/a062562745.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div id='wrap'>
+    <header>
+      <div id='text'>
+        <h1><a class='pale'>Ghost</a><a class='black'>Designs</a></h1>
+        <h2>Personal Portfolio</h2>
+      </div>
+      <div id='nav'>
+        <div id='left'>
+          <a class='animate__animated animate__slideInLeft item pale animate__delay-1s' href="#about">About</a>
+          <a class='animate__animated animate__slideInLeft item black' href="#resume">Resume</a>
+        </div>
+        <div id='right'>
+          <a class='animate__animated animate__slideInRight item black' href="#works">Works</a>
+          <a class='animate__animated animate__slideInRight item pale animate__delay-1s' href="#contact">Contact</a>
+        </div>
+      </div>
+      <img src='logo.png' class='logo animate__animated animate__fadeIn animate__delay-2s'>
+      <a class='scroll' href="#works"><i class="fas fa-angle-double-down animate__animated"></i></a>
+    </header>
+    <div class='block' id='works'>
+      <h1>What I'm Proudest Of</h1>
+      <div id='portfolio'>
+        <div class='item' id='kerokero'>
+            <a href="https://github.com/elower/kerokero" target="_blank">
+              <div class="overlay"></div>
+              <div class="content fadeIn-bottom">
+                <h3>Kero Kero Collector!</h3>
+                <p>Personal Project</p>
+                <p>Idle-Clicker mobile game in which you collect frogs and design a garden. Created in Unity Game Engine, written in C#</p>
+                <p>I designed and coded this game from the ground-up</p>
+                <p>The player owns a garden in which they can place furniture items. These furniture items attract frogs.<br>
+                  The player is able to collect the frogs that visit their garden, and these frogs will bring the player in-game currency.<br>
+                  This currency can be used to purchase more furniture that will attract more frogs.
+                </p>
+              </div>
+            </a>
+        </div>
+        <div class='item' id='memestocks'>
+          <a href="https://github.com/elower/memestocks" target="_blank">
+            <div class="overlay"></div>
+            <div class="content fadeIn-bottom">
+              <h3>MemeStocks</h3>
+              <p>Description</p>
+            </div>
+          </a>
+        </div>
+        <div class='item' id='buggy'>
+          <a href="https://github.com/bfasc/buggy" target="_blank">
+            <div class="overlay"></div>
+            <div class="content fadeIn-bottom">
+              <h3>Buggy</h3>
+              <p>2 semester-long school group project</p>
+              <p>Bug-tracking system written in PHP and JS</p>
+              <p>Integrated MySQL database</p>
+              <p>I created the design/wireframes and all images used, along with coding some of the PHP and all of the JS/JQuery, CSS, and HTML</p>
+              <p>Buggy provides your team with an easy and efficient method to knock out your project's bugs with confidence.</p>
+            </div>
+          </a>
+        </div>
+        <div class='item' id='colorcult'>
+          <a href="https://github.com/elower/colorcult" target="_blank">
+            <div class="overlay"></div>
+            <div class="content fadeIn-bottom">
+              <h3>ColorCult</h3>
+              <p>Description</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class='block' id='about'>
+      <h1>What I Value</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+    <div class='block' id='contact'>
+      <h1>Get In Touch</h1>
+      <form>
+        <div class="title">Send me an inquiry</div>
+        <div class="body">
+          <div class="row">
+            <input type="text" placeholder="Name*" required>
+            <input type="text" placeholder="Company">
+          </div>
+          <div class="row">
+            <input type="text" placeholder="Email Address*" required>
+          </div>
+          <div class="row">
+            <label for="textarea">What do you want to talk about?*</label>
+            <textarea placeholder="Message"></textarea>
+          </div>
+        </div>
+        <div class="footer">
+          <a>Send Email<i class="fas fa-paper-plane"></i></a>
+        </div>
+      </form>
+    </div>
+    <div class='block' id='resume'>
+      <h1>What I'm Doing</h1>
+      <div class='item' id='education'>
+        <h2>Education</h2>
+        <div class='content'>
+          <p><i class="fas fa-school"></i>Enrolled in Kutztown University</p>
+          <p class='detail'>Computer Science major</p>
+          <p class='detail'>Web Development minor</p>
+          <p class='detail'>2018-Present</p>
+          <p class='detail'>Graduating December 2022</p>
+        </div>
+      </div>
+      <div class='item' id='work'>
+        <h2>Work</h2>
+        <div class='content'>
+          <p><i class="fas fa-briefcase"></i>Preschool Assistant Teacher</p>
+          <p class='detail'>Good Shepherd Learning Center</p>
+          <p><i class="fas fa-search"></i>Actively looking for CS internships!</p>
+          <p class='detail'>Fill out the <a href="#contact">contact form</a> above to inform me of any opportunities you think I'd be a good fit for!</p>
+        </div>
+      </div>
+      <a href="ElizabethLowerResume.pdf" target="_blank">View my Resume in PDF Form</a>
+    </div>
+  </div>
+</body>
+<script>
+  window.onscroll = function(e) {
+    var scrollTop = $(window).scrollTop();
+    if(scrollTop > 200) { //header animations
+        $('.fa-angle-double-down').removeClass('animate__animated');
+        $('.fa-angle-double-down').fadeOut();
+    } else {
+      $('.fa-angle-double-down').addClass('animate__animated');
+      $('.fa-angle-double-down').css("animation-delay","0s, 1s");
+
+      $('.fa-angle-double-down').fadeIn();
+    }
+
+};
+/*Smooth Scroll code from w3schools*/
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Using jQuery's animate() method to add smooth page scroll
+      $('html, body').animate({
+        scrollTop: $(this.hash).offset().top
+      }, 600, function(){
+      });
+    }
+  });
+});
+</script>
+</html>
