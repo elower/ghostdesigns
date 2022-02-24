@@ -1,0 +1,84 @@
+/*https://codepen.io/shetty-tejas/pen/gORPZdy*/
+#hamburger {
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.25s linear;
+  width: 30px;
+  height: 5px;
+  display: none;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 3;
+}
+
+#hamburger div,
+#hamburger div:after,
+#hamburger div:before {
+  background-color: #fafaff;
+  border-radius: 10px;
+  width: 30px;
+  height: 5px;
+  transition: all 0.15s linear;
+}
+
+#hamburger div:before,
+#hamburger div:after {
+  content: "";
+  position: absolute;
+}
+
+#hamburger div:before {
+  transform: translateY(-200%);
+}
+
+#hamburger div:after {
+  transform: translateY(200%);
+}
+
+#hamburger.open div {
+  background: transparent;
+}
+
+#hamburger.open div:before {
+  transform: rotate(45deg);
+}
+
+#hamburger.open div:after {
+  transform: rotate(-45deg);
+}
+
+#ham-wrap {
+  position: fixed;
+  width: 100%;
+  min-height: 100%;
+  background-color: #1a1a1a;
+  z-index: 2;
+  transform: translateY(-100%);
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#ham-wrap.menu {
+  transform: translateY(0%);
+}
+
+#ham-wrap a {
+  text-decoration: none;
+  background-color: #d6d6b1;
+  font-size: 23px;
+  display: block;
+  padding: 40px;
+  margin: 2px 0;
+  width: 100%;
+  text-align: center;
+  color: #2a2a2a;
+}
+
+#ham-wrap a:hover {
+  opacity: 1;
+}

@@ -14,9 +14,11 @@
 
 <!-- CSS
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link rel="stylesheet" href="css/ham.css">
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <link rel="stylesheet" href="css/style.css">
+
 
 
 <!-- Favicon
@@ -33,6 +35,12 @@
 </head>
 
 <body>
+  <div id="ham-wrap">
+    <a href="#about">About</a>
+    <a href="#resume">Resume</a>
+    <a href="#works">Works</a>
+    <a href="#contact">Contact</a>
+  </div>
   <div id='wrap'>
     <header>
       <div id='text'>
@@ -51,6 +59,10 @@
       </div>
       <img src='logo.png' class='logo animate__animated animate__fadeIn animate__delay-2s'>
       <a class='scroll' href="#works"><i class="fas fa-angle-double-down animate__animated"></i></a>
+
+      <div id="hamburger">
+        <div></div>
+      </div>
     </header>
     <div class='block' id='works'>
       <h1>What I'm Proudest Of</h1>
@@ -193,6 +205,49 @@ $(document).ready(function(){
       });
     }
   });
+
+  let mobile = false;
+  if( $('#hamburger').css('display')!=='none') {
+      mobile = true;
+  }
+
+  if (mobile == true) {
+    let focus = null;
+      //make hover events tap events instead
+      $('#portfolio > .item a').each(function() {
+        var link = $(this).attr('href');
+        $(this).click(function(e) {
+          e.preventDefault();
+          if(focus == link) { //already in focus
+            window.open(link, '_blank');
+            focus = null;
+          } else {
+            focus = link;
+          }
+        });
+      });
+  }
 });
+/*https://codepen.io/shetty-tejas/pen/gORPZdy*/
+(() => {
+  const hamburger = document.getElementById("hamburger");
+  const menu = document.getElementById("ham-wrap");
+  let open = false;
+
+  const change = () => {
+    if (!open) {
+      hamburger.classList.add("open");
+      menu.classList.add("menu");
+    } else {
+      hamburger.classList.remove("open");
+      menu.classList.remove("menu");
+    }
+    open = !open;
+  };
+
+  hamburger.addEventListener("click", change);
+  $('#ham-wrap > a').click( change );
+})();
+
 </script>
 </html>

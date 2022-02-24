@@ -136,7 +136,9 @@ header {
   justify-content: space-between; }
   #works #portfolio .item {
     background-image: url("../logo.png");
-    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     width: 350px;
     height: 350px;
     margin: 30px 0;
@@ -339,5 +341,54 @@ header {
       color: #2a2a2a; }
     #resume #education .detail {
       color: #2a464b; }
+
+@media screen and (max-height: 900px), (max-width: 1000px) {
+  #nav {
+    display: none !important; }
+
+  #hamburger {
+    display: flex; }
+
+  header .logo {
+    bottom: 200px;
+    animation-delay: 0s !important; }
+  header #text h1 {
+    font-size: 42px;
+    margin-top: 100px; }
+  header #text h2 {
+    font-size: 22px;
+    letter-spacing: 5px; }
+
+  .block {
+    padding: 0 20px; }
+    .block h1 {
+      font-size: 28px;
+      padding: 5px; }
+
+  #about p {
+    font-size: 18px;
+    line-height: 32px;
+    letter-spacing: 1px; }
+
+  #contact form {
+    width: 90%; }
+    #contact form .title {
+      font-size: 18px; }
+    #contact form .body .row {
+      display: block; }
+      #contact form .body .row input[type="text"] {
+        margin: 5px 0;
+        width: 90%; }
+      #contact form .body .row textarea, #contact form .body .row label[for="textarea"] {
+        width: 90%;
+        margin: 5px 0; }
+
+  #resume {
+    flex-direction: column; }
+    #resume .item {
+      width: 90%;
+      margin: 10px auto; }
+      #resume .item .content {
+        padding: 5px; } }
 
 /*# sourceMappingURL=style.css.map */
